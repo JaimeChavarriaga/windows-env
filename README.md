@@ -8,6 +8,8 @@ This repository is based on [the instructions in the Atalassian website](https:/
 
 To install the configuration files, you must clone them into a [bare repository](http://www.saintsjd.com/2011/01/what-is-a-bare-git-repository/) and checkout the content into the `$HOME`.  
 
+In addition, you must enable the execution of PowerShell scripts in order to run the `Profile.ps1` or the `Microsoft.PowerShell_profile.ps1` scripts at starting a session in Windows Terminal or Visual Studio Code. 
+
 ```
 # clone repository
 git clone --bare https://github.com/JaimeChavarriaga/windows-env.git $HOME/windows-env
