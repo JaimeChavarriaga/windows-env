@@ -16,6 +16,9 @@ git clone --bare https://github.com/JaimeChavarriaga/windows-env.git $HOME/windo
 function Run-Custom-Config { git --git-dir=$HOME/windows-env/ --work-tree=$HOME  $args } 
 New-Alias -Name config -Value Run-Custom-Config
 
+# define execution policy to run the profile scripts
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 # configure git
 git config --global user.name "Jaime Chavarriaga"
 git config --global user.email JaimeChavarriaga@users.noreply.github.com
