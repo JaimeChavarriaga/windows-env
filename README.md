@@ -21,14 +21,28 @@ New-Alias -Name config -Value Run-Custom-Config
 # define execution policy to run the profile scripts
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-# configure git
-git config --global user.name "Jaime Chavarriaga"
-git config --global user.email JaimeChavarriaga@users.noreply.github.com
-git config --global credential.helper manager
-
 # configure the repository
 config config --local status.showUntrackedFiles no
 
 # copy the configuration files overwritting existing ones
 config checkout -f
+```
+
+**NOTE:** To use this configuration files in your own computers, you may configure `git` using a `.gitconfig` file and/or some of the following commands:
+
+```
+# configure git
+git config --global user.name "Jaime Chavarriaga"
+git config --global user.email JaimeChavarriaga@users.noreply.github.com
+git config --global credential.helper manager
+```
+
+## Updating a configuration file
+
+Use the `config` alias to update the configuration files.
+
+```
+config add <file-to-update>
+config commit -m "<message-for-commit>"
+config push -u origin main
 ```
