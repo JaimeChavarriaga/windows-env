@@ -46,3 +46,24 @@ config add <file-to-update>
 config commit -m "<message-for-commit>"
 config push -u origin main
 ```
+
+## Managing secrets in configuration
+
+To keep public any configuration repository, you must use a different repository for *secrets* and *personal files*, such as `~/.gitconfig` and `~/.ssh/known_hosts`.
+
+```
+# Create a personal-env repository
+./bin/create-personal-env.ps1
+
+# add secret files
+secrets add <file-to-update>
+secrets commit -m "<message-for-commit>"
+
+# configure github remote (just one time)
+secrets branch -M main
+secrets remote add origin <git-repository-url>
+
+# push the changes
+secrets push -u origin main
+```
+
