@@ -55,13 +55,12 @@ To keep public any configuration repository, you must use a different repository
 # Create a personal-env repository
 ./bin/create-personal-env.ps1
 
+# configure github remote (just one time)
+secrets remote add origin <git-repository-url>
+
 # add secret files
 secrets add <file-to-update>
 secrets commit -m "<message-for-commit>"
-
-# configure github remote (just one time)
-secrets branch -M main
-secrets remote add origin <git-repository-url>
 
 # push the changes
 secrets push -u origin main
